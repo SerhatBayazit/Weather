@@ -1,0 +1,369 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  background-image:url(image/cloudy.jpg) ;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+/* Navbar Start */
+.navbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 25px;
+}
+
+.header div i {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.nav-list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    list-style: none;
+}
+
+/* .nav-list ul li {
+
+} */
+.nav-list ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    /* font-weight: bold; */
+
+}
+
+.nav-list ul li:hover {
+    font-weight: bolder;
+}
+
+.main-page {
+    font-weight: 700;
+}
+
+/* Navbar finish */
+/* Container start */
+.container {
+    width: 100%;
+    height: calc(100vh - 60px);
+
+}
+
+.search-area {
+    width: 100%;
+    height: 13%;
+    padding-top: 4%;
+    margin-bottom: 5%;
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5%;
+}
+
+.input-wrapper {
+    width: 50%;
+}
+
+form input {
+    width: 100%;
+    padding: 1% 1%;
+}
+
+form input::placeholder {
+    font-size: 15px;
+}
+
+/* .button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 5px;
+} */
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search {
+    padding: 6% 15%;
+    cursor: pointer;
+    background-color: rgb(179, 23, 23);
+    transition: 1s;
+    color: white;
+    font-size: 18px;
+}
+
+.search:hover {
+    background-color: black;
+}
+
+.clear {
+    cursor: pointer;
+    padding: 6% 15%;
+    background-color: black;
+    color: white;
+    transition: 1s;
+    font-size: 18px;
+
+}
+
+.clear:hover {
+    background-color: rgb(179, 23, 23);
+}
+
+.information-area {
+    height: 75%;
+}
+
+.weather-informations-area {
+    width: 75%;
+    height: 90%;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.2); /* Hafif şeffaf arkaplan */
+  backdrop-filter: blur(15px); /* Arka planı bulanıklaştırır */
+}
+
+.city-name {
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-bottom: 1%;
+    font-size: 24px;
+    height: 20%;
+}
+
+.weather {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 90%;
+    margin: auto;
+    padding-top: 2%;
+    height: 80%;
+    column-gap: 5%;
+    overflow: hidden;
+}
+
+.area-1 {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    font-size: 22px;
+}
+
+.line {
+    width: 1px;
+    background-color: black;
+    margin-bottom: 7%;
+}
+
+
+.inf-1 {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 3%;
+    transition: 1s;
+}
+
+
+.area-2 {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    font-size: 20px;
+
+}
+
+.sunrise-set {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sunrise-set .icons i {
+    color: orange;
+
+    font-size: 30px;
+}
+
+.icon-1,
+.icon-2 {
+    display: flex;
+    align-items: center;
+    gap: 20%;
+    margin-bottom: 10px;
+}
+
+.icon-1,
+.icon-2,
+span {
+    width: 100px;
+    /* padding-left: 50%; */
+}
+
+.date-time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.TwcSunChart--graphPath--gtEr4 {
+    padding-top: 10px !important;
+    fill: none;
+    stroke: orange;
+    stroke-width: 3;
+    animation: drawPath 2s ease-in-out forwards;
+}
+
+@keyframes drawPath {
+    from {
+        stroke-dasharray: 0, 200;
+    }
+
+    to {
+        stroke-dasharray: 200, 0;
+    }
+}
+
+.alert {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50px;
+    background-color: #F8D7DA;
+    margin-top: 0.5%;
+    z-index: 100;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.alert-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 900px) {
+
+    .about,
+    .contact {
+        display: none;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .input-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+    }
+
+    form input {
+        padding: 1% 1%;
+    }
+    .search{
+        padding: 5% 20%;
+    }
+    .clear{
+        padding: 5% 20%;
+    }
+    .information-area{
+        margin-bottom: 5%;
+        
+    }
+    .weather-informations-area{
+        height: 150%;
+        width: 95%;
+        
+    }
+    .city-name{
+        height: 10%;
+    }
+    .weather{
+        flex-direction: column;
+    }
+    .area-1{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        margin-left: 5%;
+        
+    }
+    .area-2{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        margin-left: 5%;
+    }
+    .line{
+        display: none;
+    }
+    .alert {
+        width: 80%;   
+        z-index: 100;
+    }
+
+}
+@media (max-width: 720px) {
+    .area-1{
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    } 
+    .area-2{
+        width: 90%;
+        margin-top: 3%;
+        display: flex;
+        justify-content: center;
+    }
+    .alert {
+        width: 80%;   
+        z-index: 100;
+    }
+    
+ 
+    
+
+}
