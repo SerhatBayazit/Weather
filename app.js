@@ -17,6 +17,7 @@ const bulut = list[6].children[1];
 const sunrise = document.querySelector(".icon-1 span")
 const sunset = document.querySelector(".icon-2 span")
 const tarih = document.querySelector(".date-time p")
+import { apiKey1, apiKey2 } from './apikey.js';
 
 
 let currentIndex = 0;
@@ -43,9 +44,9 @@ function changeİcon() {
 function search1(e) {
   const value = input.value.trim();
   const city = value;
-  const apiKey = "372c7f6f9a562b494dd6af6b3335add8";
 
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
+
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey2}`)
     .then(response => response.json())
     .then(data => {
       dataSet(data);
@@ -73,7 +74,6 @@ function dataSet(data) {
 
     });
 
-  //AIzaSyA4bFQm8IbQ6USiPRAW1Dx7NHTPaod5SGE
 
   setWeatherBackgroundById(data.weather[0].id);
 
@@ -186,10 +186,11 @@ async function getSunriseSunsetTimes(sunriseUnix, sunsetUnix, timeZoneOffsetInSe
   };
 }
 async function getLocalDate(lon, lat) {
-  const apiKey = 'AIzaSyA4bFQm8IbQ6USiPRAW1Dx7NHTPaod5SGE';
+
+
   const timestamp = Math.floor(Date.now() / 1000); // UTC timestamp (saniye)
 
-  const url = `https://maps.googleapis.com/maps/api/timezone/json?location=${lat},${lon}&timestamp=${timestamp}&key=${apiKey}`;
+  const url = `https://maps.googleapis.com/maps/api/timezone/json?location=${lat},${lon}&timestamp=${timestamp}&key=${apiKey1}`;
 
   try {
     const response = await fetch(url);
