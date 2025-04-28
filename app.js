@@ -17,7 +17,12 @@ const bulut = list[6].children[1];
 const sunrise = document.querySelector(".icon-1 span")
 const sunset = document.querySelector(".icon-2 span")
 const tarih = document.querySelector(".date-time p")
-import { apiKey1, apiKey2 } from './apikey.js';
+// import { apiKey1, apiKey2 } from './apikey.js';
+require('dotenv').config();
+
+// API anahtarlarını .env dosyasından al
+const apiKey1 = process.env.API_KEY_1;
+const apiKey2 = process.env.API_KEY_2;
 
 
 let currentIndex = 0;
@@ -73,8 +78,7 @@ function dataSet(data) {
       tarih.textContent = sonuc.saat;
 
     });
-
-
+    
   setWeatherBackgroundById(data.weather[0].id);
 
   console.log(data)
