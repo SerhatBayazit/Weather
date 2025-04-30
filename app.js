@@ -73,7 +73,7 @@ function dataSet(data) {
       tarih.textContent = sonuc.saat;
 
     });
-    
+
   setWeatherBackgroundById(data.weather[0].id);
 
   console.log(data)
@@ -275,11 +275,13 @@ menuLinks.forEach(link => {
   });
 });
 const links = document.querySelectorAll(".nav-list ul li a");
-        const currentPage = window.location.pathname.split("/").pop();
-
-        links.forEach(link => {
-            const linkPage = link.getAttribute("href");
-            if (linkPage === currentPage) {
-                link.classList.add("active");
-            }
-        });
+const currentPage = window.location.pathname.split("/").pop();
+if (currentPage === "") {
+  currentPage = "index.html";
+}
+links.forEach(link => {
+  const linkPage = link.getAttribute("href");
+  if (linkPage === currentPage) {
+    link.classList.add("active");
+  }
+});

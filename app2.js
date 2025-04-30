@@ -37,6 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".nav-list ul li a");
     const currentPage = window.location.pathname.split("/").pop();
 
+    if (currentPage === "") {
+        currentPage = "index.html";
+      }
+      
     links.forEach(link => {
         const linkPage = link.getAttribute("href");
         if (linkPage === currentPage) {
