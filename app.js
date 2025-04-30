@@ -17,7 +17,7 @@ const bulut = list[6].children[1];
 const sunrise = document.querySelector(".icon-1 span")
 const sunset = document.querySelector(".icon-2 span")
 const tarih = document.querySelector(".date-time p")
-import { apiKey1, apiKey2 } from './apikey.js';
+
 
 
 let currentIndex = 0;
@@ -283,4 +283,3 @@ const links = document.querySelectorAll(".nav-list ul li a");
                 link.classList.add("active");
             }
         });
-        
