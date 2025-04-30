@@ -17,12 +17,7 @@ const bulut = list[6].children[1];
 const sunrise = document.querySelector(".icon-1 span")
 const sunset = document.querySelector(".icon-2 span")
 const tarih = document.querySelector(".date-time p")
-// import { apiKey1, apiKey2 } from './apikey.js';
-require('dotenv').config();
-
-// API anahtarlarını .env dosyasından al
-const apiKey1 = process.env.API_KEY_1;
-const apiKey2 = process.env.API_KEY_2;
+import { apiKey1, apiKey2 } from './apikey.js';
 
 
 let currentIndex = 0;
@@ -266,3 +261,25 @@ function setWeatherBackgroundById(weatherId) {
   body.style.backgroundSize = 'cover';
   body.style.backgroundPosition = 'center';
 }
+
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu")
+
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('active');
+});
+const menuLinks = mobileMenu.querySelectorAll("a");
+menuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+  });
+});
+const links = document.querySelectorAll(".nav-list ul li a");
+        const currentPage = window.location.pathname.split("/").pop();
+
+        links.forEach(link => {
+            const linkPage = link.getAttribute("href");
+            if (linkPage === currentPage) {
+                link.classList.add("active");
+            }
+        });
